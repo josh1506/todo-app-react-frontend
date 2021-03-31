@@ -1,0 +1,109 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #444;
+    width: 400px;
+    padding: 30px 50px;
+    border-radius: 15px;
+    border: #03DAC6 2px solid;
+    margin-top: 5%;
+}
+
+.login-label {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.login-input-text {
+    width: 99%;
+    font-size: 18px;
+    transition: ease-in-out 0.3s;
+}
+
+.login-input-text:focus {
+    background: rgb(240, 240, 240);
+}
+
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input-container {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn-container {
+    width: 400px;
+    margin-top: 30px;
+}
+
+.login-btn-container-two {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.login-btn-forgotpass {
+    font-family: 'Chango', cursive;
+    width: 48%;
+    font-size: 14px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.login-btn-forgotpass:hover {
+    color: #cf6679;
+    border: #cf6679 2px solid;
+}
+
+.login-btn-login {
+    font-family: 'Chango', cursive;
+    width: 100%;
+    font-size: 16px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+}
+
+.login-btn-login:hover {
+    color: #03DAC6;
+    border: #03DAC6 2px solid;
+}
+
+.login-btn-signup {
+    font-family: 'Chango', cursive;
+    width: 48%;
+    font-size: 14px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.login-btn-signup:hover {
+    color: #03DAC6;
+    border: #03DAC6 2px solid;
+}
