@@ -1,0 +1,48 @@
+.navbar-button {
+    color: rgb(226, 226, 226);
+    letter-spacing: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.navbar-button:hover {
+    color: #03dac6;
+    transform: scale(1.1);
+}
+
+.navbar-container {
+    background-color: #000;
+    border-bottom: #bb86fc 5px groove;
+    position: static;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-title {
+    font-family: 'Chango', cursive;
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    font-size: 35px;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    padding-left: 7%;
+}
+
+.navbar-button-container {
+    font-family: 'Chango', cursive;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(226, 226, 226);
+    height: 55px;
+    margin-right: 10px;
+}
+
+.navbar-button-seperator {
+    margin: 0 7px;
+}
