@@ -1,0 +1,65 @@
+.landing-page-button {
+    position: absolute;
+    font-family: 'Chango', cursive;
+    text-decoration: none;
+    background-color: #121212;
+    color: #fff;
+    border: #fff 2px solid;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.landing-page-button:hover {
+    transform: scale(1.03);
+    font-size: 21px;
+    color: #03DAC6;
+    border: #03DAC6 2px solid;
+}
+
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.landing-page-img {
+    height: 92vh;
+    width: 100%;
+    background-image: url("../img/felipe-furtado-2zDXqgTzEFE-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(1.7px);
+}
+
+.landing-page-paragraph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    width: 100%;
+}
+
+.landing-page-paragraph {
+    font-family: 'New Tegomin', serif;
+    color: #03DAC6;
+    font-size: 25px;
+    text-align: center;
+    width: 1200px;
+    padding: 30px;
+}
+
+.landing-page-show-content {
+    height: 92vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
