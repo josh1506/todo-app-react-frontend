@@ -7,7 +7,7 @@
 .signup-container {
     display: flex;
     flex-direction: column;
-    background-color: #444;
+    background-color: #222;
     width: 400px;
     padding: 30px 50px;
     border-radius: 15px;

@@ -1,7 +1,7 @@
 .login-container {
     display: flex;
     flex-direction: column;
-    background-color: #444;
+    background-color: #222;
     width: 400px;
     padding: 30px 50px;
     border-radius: 15px;
@@ -12,6 +12,12 @@
 .login-label {
     color: rgb(255, 255, 255);
     font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.login-error-label {
+    color: #cf6679;
+    font-size: 13px;
     letter-spacing: 2px;
 }
 
