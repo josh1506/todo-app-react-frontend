@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 import '../assets/css/forgotpassword.css'
 
 
 function ForgotPassword(props) {
+    useEffect(() => {
+        const token = props.auth || localStorage.getItem('auth_token')
+        if (token) props.history.replace('/todo')
+    }, [])
+
     return (
         <div className='forgotpass-page-container'>
             <div className="forgotpass-container">
