@@ -26,4 +26,9 @@
 .footer-icon {
     margin: 5px;
     cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.footer-icon:hover {
+    color: #03DAC6;
 }
