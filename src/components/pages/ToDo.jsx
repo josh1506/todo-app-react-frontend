@@ -1,96 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux'
 
+import { todoGetData } from '../../app/todo'
 import '../assets/css/todo.css'
 
 function ToDo(props) {
     const [selectedItem, setSelectedItem] = useState('')
-    const [todoList, setTodoList] = useState([
-        {
-            id: 1,
-            title: 'Todo',
-            taskList: [
-                {
-                    id: 1,
-                    message: 'Task todo',
-                    completed: true
-                },
-                {
-                    id: 2,
-                    message: 'Task todo',
-                    completed: true
-                },
-                {
-                    id: 3,
-                    message: 'Task todo',
-                    completed: true
-                },
-            ]
-        },
-        {
-            id: 2,
-            title: 'Todo',
-            taskList: [
-                {
-                    id: 1,
-                    message: 'Task todo',
-                    completed: true
-                },
-                {
-                    id: 2,
-                    message: 'Task todo',
-                    completed: true
-                },
-                {
-                    id: 3,
-                    message: 'Task todo',
-                    completed: false
-                },
-            ]
-        },
-        {
-            id: 3,
-            title: 'Todo',
-            taskList: [
-                {
-                    id: 1,
-                    message: 'Task todo',
-                    completed: false
-                },
-                {
-                    id: 2,
-                    message: 'Task todo',
-                    completed: false
-                },
-                {
-                    id: 3,
-                    message: 'Task todo',
-                    completed: true
-                },
-            ]
-        }
-    ])
+
+    useEffect(() => {
+        const token = props.auth || localStorage.getItem('auth_token')
+        if (!token) props.history.replace('/login')
+
+        props.todoGetData()
+    }, [])
 
     const calcTotalTask = (task) => {
+        if (task.length <= 0) return 0
+
         let completedTask = 0
         const totalTask = task.length
         task.map(taskItem => taskItem.completed === true ? completedTask += 1 : completedTask)
-        // console.log(completedTask, totalTask)
         return Math.ceil((completedTask / totalTask) * 100)
     }
+
+    if (props.todoList <= 0) return (
+        <div className='todo-page-container'>
+            <div className='todo-container'>
+                <h1 className='todo-item-title' style={{ textAlign: 'center' }}>There are no to-do created</h1>
+            </div>
+        </div >
+    )
 
     return (
         <div className='todo-page-container'>
             <div className='todo-container'>
-                {todoList.map(todo =>
-                    <div className={`todo-item ${selectedItem === todo.id ? 'active' : ''}`}>
+                {props.todoList.map(todo =>
+                    <div className={`todo-item ${selectedItem === todo.id ? 'active' : ''}`} key={todo.id}>
                         <div className='todo-item-title-container' onClick={() => selectedItem === todo.id ? setSelectedItem('') : setSelectedItem(todo.id)}>
-                            <h1 className='todo-item-title'>{todo.title}</h1>
-                            <p className='todo-item-title'>{calcTotalTask(todo.taskList)}%</p>
+                            <h1 className='todo-item-title'>{todo.memo}</h1>
+                            <p className='todo-item-title'>{calcTotalTask(todo.checklist)}%</p>
                         </div>
                         <div className='todo-task-list'>
                             <ol>
-                                {todo.taskList.map(task =>
-                                    <li key={task.id}>{task.message}</li>
+                                {todo.checklist.map(task =>
+                                    <li key={task.id}>{task.text}</li>
                                 )}
                             </ol>
                         </div>
@@ -101,4 +54,8 @@ function ToDo(props) {
     );
 }
 
-export default ToDo;
+
+const mapStateToProps = state => {
+    return { todoList: state.todo }
+}
+export default connect(mapStateToProps, { todoGetData })(ToDo);
