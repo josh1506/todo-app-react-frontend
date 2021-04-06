@@ -18,9 +18,8 @@ function Login(props) {
         if (data) {
             setError('')
             const token = data.data.token
-            localStorage.setItem('auth_token', token)
             props.authAdd(token)
-            props.history.replace('/todo')
+            props.history.replace('/')
         }
     }
 
