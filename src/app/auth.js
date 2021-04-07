@@ -8,6 +8,8 @@ const AUTH_REMOVED = 'authRemoved'
 
 // actions
 export const authAdd = token => {
+    localStorage.setItem('auth_token', token)
+    
     return {
         type: AUTH_ADDED,
         payload: {
@@ -17,6 +19,8 @@ export const authAdd = token => {
 }
 
 export const authRemoved = () => {
+    localStorage.removeItem('auth_token')
+    
     return {
         type: AUTH_REMOVED,
     }
