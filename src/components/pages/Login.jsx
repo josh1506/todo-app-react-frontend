@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import FacebookLogin from 'react-facebook-login';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -21,6 +24,10 @@ function Login(props) {
             props.authAdd(token)
             props.history.replace('/')
         }
+    }
+
+    const responseFacebook = (response) => {
+        console.log(response);
     }
 
     useEffect(() => {
@@ -60,7 +67,17 @@ function Login(props) {
                         <Link to='/forgot-password' className='login-btn-forgotpass'>Forgot Password</Link>
                         <Link to='/signup' className='login-btn-signup'>Signup</Link>
                     </div>
-                    <button style={{ width: 50, height: 50 }}>F</button>
+                    <div>
+                        <p className='login-label'>Login with:</p>
+                        <FacebookLogin
+                            appId="808533529754347"
+                            autoLoad={true}
+                            fields="name,email,picture"
+                            callback={responseFacebook}
+                            cssClass="facebook-login-btn"
+                            textButton={<FontAwesomeIcon icon={faFacebookF} color='white' size='2x' className='facebook-login-icon' />}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
