@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .todo-container {
@@ -44,4 +45,362 @@
     align-items: flex-end;
     border-bottom: #03DAC6 2px solid;
     cursor: pointer;
+}
+
+.checklist-container {
+    display: flex;
+    margin: 5px 0;
+}
+
+/* Checkbox */
+.item-title-container {
+    display: flex;
+}
+
+.checkbox-container {
+    display: flex;
+    padding-left: 30px;
+    display: block;
+    position: relative;
+    margin-top: 13px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #121212;
+    border: #03DAC6 solid 2px;
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input~.checkbox-checkmark {
+    background-color: #444;
+}
+
+.checkbox-container input:checked~.checkbox-checkmark {
+    background-color: #222;
+}
+
+.checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkbox-checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkbox-checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #03DAC6;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Checklist */
+.checkbox-container-mini {
+    display: flex;
+    margin: 4px 25px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container-mini input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-checkmark-mini {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #121212;
+    border: #03DAC6 solid 2px;
+    border-radius: 4px;
+}
+
+.checkbox-container-mini:hover input~.checkbox-checkmark-mini {
+    background-color: #444;
+}
+
+.checkbox-container-mini input:checked~.checkbox-checkmark-mini {
+    background-color: #222;
+}
+
+.checkbox-checkmark-mini:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container-mini input:checked~.checkbox-checkmark-mini:after {
+    display: block;
+}
+
+.checkbox-container-mini .checkbox-checkmark-mini:after {
+    left: 4px;
+    top: -1px;
+    width: 5px;
+    height: 10px;
+    border: solid #03DAC6;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Modal */
+.create-todo-modal-container {
+    top: 0;
+    height: 92.3vh;
+    width: 100%;
+    position: absolute;
+    background: rgba(34, 34, 34, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-todo-modal {
+    margin-top: 20px;
+    padding: 50px 30px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    background-color: #222;
+    border-radius: 15px;
+    border: #03DAC6 2px solid;
+}
+
+.checklist-count-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 30px 50px;
+    margin-top: 5%;
+}
+
+
+.todo-btn-container {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.todo-btn-cancel {
+    font-family: 'Chango', cursive;
+    width: 48%;
+    font-size: 14px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.todo-btn-cancel:hover {
+    color: #cf6679;
+    border: #cf6679 2px solid;
+}
+
+.todo-btn-create {
+    font-family: 'Chango',
+        cursive;
+    width: 48%;
+    font-size: 16px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+}
+
+.todo-btn-create:hover {
+    color: #03DAC6;
+    border: #03DAC6 2px solid;
+}
+
+.todo-label {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.todo-label-add {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.todo-input-text-memo {
+    width: 99%;
+    font-size: 23px;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 20px;
+}
+
+.todo-input-text-memo:focus {
+    background: rgb(240, 240, 240);
+}
+
+.todo-input-text-checklist {
+    width: 99%;
+    font-size: 18px;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 5px;
+}
+
+.todo-input-text-checklist:focus {
+    background: rgb(240, 240, 240);
+}
+
+.todo-add-icon-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.todo-add-icon {
+    margin: 5px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.todo-add-icon:hover {
+    color: #03DAC6;
+}
+
+.todo-delete-icon {
+    margin: 5px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    position: absolute;
+    margin-left: 450px;
+}
+
+.todo-delete-icon:hover {
+    color: #cf6679;
+}
+
+.todo-status-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.delete-todo-modal-container {
+    top: 0;
+    height: 92.3vh;
+    width: 100%;
+    position: absolute;
+    background: rgba(34, 34, 34, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-todo-modal {
+    margin-top: -130px;
+    padding: 50px 30px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    background-color: #222;
+    border-radius: 15px;
+    border: #cf6679 2px solid;
+}
+
+.todo-btn-cancel-delete {
+    font-family: 'Chango', cursive;
+    width: 48%;
+    font-size: 20px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.todo-btn-cancel-delete:hover {
+    color: #03DAC6;
+    border: #03DAC6 2px solid;
+}
+
+.todo-btn-delete {
+    font-family: 'Chango', cursive;
+    width: 48%;
+    font-size: 20px;
+    background: #121212;
+    color: rgb(226, 226, 226);
+    border: #cf6679 2px solid;
+    cursor: pointer;
+    padding: 2px 0px;
+    transition: ease-in-out 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.todo-btn-delete:hover {
+    color: #cf6679;
+    border: #cf6679 2px solid;
+}
+
+.delete-message {
+    color: rgb(240, 240, 240);
+    font-size: 20px;
 }
