@@ -113,3 +113,27 @@
     color: #03DAC6;
     border: #03DAC6 2px solid;
 }
+
+.facebook-login-btn {
+    height: 40px;
+    width: 40px;
+    background: #121212;
+    color: #03DAC6;
+    border: rgb(226, 226, 226) 2px solid;
+    border-radius: 3px;
+    margin-top: 10px;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.facebook-login-btn:hover {
+    border: rgb(226, 226, 226) 0px solid;
+    background: #4267B2;
+    transform: scale(1.2);
+}
+
+.facebook-login-icon {
+    color: rgb(226, 226, 226);
+    margin-left: 9px;
+    margin-top: 10px;
+}
