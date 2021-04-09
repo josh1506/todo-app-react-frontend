@@ -55,6 +55,13 @@
     border: #03DAC6 2px solid;
 }
 
+.signup-button-create:disabled {
+    opacity: 0.7;
+    cursor: auto;
+    color: rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 2px solid;
+}
+
 .signup-button-container {
     display: flex;
     justify-content: space-between;
@@ -80,4 +87,10 @@
 .signup-form-container {
     display: flex;
     flex-direction: column;
+}
+
+.signup-error-label {
+    color: #cf6679;
+    font-size: 13px;
+    letter-spacing: 2px;
 }
