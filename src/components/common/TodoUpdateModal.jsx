@@ -61,7 +61,7 @@ function TodoUpdateModal(props) {
                     <label htmlFor="checklist" className="todo-label">Memo</label>
                     <div className='checklist-count-container'>
                         {checklistData.map((task, index) =>
-                            <div className="checklist-item">
+                            <div style={{ display: 'flex' }}>
                                 <input
                                     className="todo-input-text-checklist"
                                     key={`${task.id}`}
