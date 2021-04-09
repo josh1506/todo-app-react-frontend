@@ -13,12 +13,11 @@ const TODO_UPDATED_DATA = 'todoUpdatedData'
 // action
 export const todoGetData = (token) => async dispatch => {
     const respond = await route.get('todo/list/get_user_data/',{headers: {'Authentication': `Token ${token}`}})
-    .catch(() => console.log('Something went wrong'))
-    console.log(respond)
-    dispatch({
+    .then(({data}) => dispatch({
         type: TODO_GET_DATA,
-        payload: {todoList: respond.data}
-    })
+        payload: {todoList: data}
+    }))
+    .catch(() => console.log('Something went wrong'))
 }
 
 export const todoAdded = (todo, checklist) => async dispatch => {
