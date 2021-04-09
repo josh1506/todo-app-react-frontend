@@ -48,7 +48,7 @@
 
 .login-btn-container {
     width: 400px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .login-btn-container-two {
@@ -58,28 +58,9 @@
     text-align: center;
 }
 
-.login-btn-forgotpass {
-    font-family: 'Chango', cursive;
-    width: 48%;
-    font-size: 14px;
-    background: #121212;
-    color: rgb(226, 226, 226);
-    border: rgb(226, 226, 226) 2px solid;
-    cursor: pointer;
-    padding: 2px 0px;
-    transition: ease-in-out 0.3s;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.login-btn-forgotpass:hover {
-    color: #cf6679;
-    border: #cf6679 2px solid;
-}
-
 .login-btn-login {
     font-family: 'Chango', cursive;
-    width: 100%;
+    width: 48%;
     font-size: 16px;
     background: #121212;
     color: rgb(226, 226, 226);
