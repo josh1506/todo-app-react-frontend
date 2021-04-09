@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle, faEdit } from '@fortawesome/free-solid-svg-icons'
 
-import todo, { todoGetData, todoUpdated, taskUpdated } from '../../app/todo'
+import { todoGetData, todoUpdated, taskUpdated } from '../../app/todo'
 import TodoCreateModal from '../common/TodoCreateModal';
 import '../assets/css/todo.css'
 import TodoUpdateModal from './../common/TodoUpdateModal';
@@ -18,7 +18,7 @@ function ToDo(props) {
         const token = props.auth || localStorage.getItem('auth_token')
         if (!token) props.history.replace('/login')
 
-        props.todoGetData()
+        props.todoGetData(token)
     }, [])
 
     const calcTotalTask = (todo) => {
