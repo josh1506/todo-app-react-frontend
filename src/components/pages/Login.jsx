@@ -14,8 +14,8 @@ function Login(props) {
     const [error, setError] = useState('')
 
     const handleSubmit = async () => {
-        console.log('click')
-        const data = await route.post('auth/', userData)
+        setError('')
+        const data = await route.post('user/auth/', userData)
             .catch(() => setError('username or password is incorrect'))
 
         if (data) {
@@ -26,8 +26,14 @@ function Login(props) {
         }
     }
 
-    const responseFacebook = (response) => {
-        console.log(response);
+    const responseFacebook = async (response) => {
+        await route.post('user/facebook/auth/', response)
+            .then(({ data }) => {
+                setError('')
+                const token = data.token
+                props.authAdd(token)
+                props.history.replace('/')
+            })
     }
 
     useEffect(() => {
@@ -62,16 +68,14 @@ function Login(props) {
                     />
                 </form>
                 <div className='login-btn-container'>
-                    <button className='login-btn-login' onClick={() => handleSubmit()}>Login</button>
                     <div className='login-btn-container-two'>
-                        <Link to='/forgot-password' className='login-btn-forgotpass'>Forgot Password</Link>
                         <Link to='/signup' className='login-btn-signup'>Signup</Link>
+                        <button className='login-btn-login' onClick={() => handleSubmit()}>Login</button>
                     </div>
                     <div>
                         <p className='login-label'>Login with:</p>
                         <FacebookLogin
                             appId="808533529754347"
-                            autoLoad={true}
                             fields="name,email,picture"
                             callback={responseFacebook}
                             cssClass="facebook-login-btn"
