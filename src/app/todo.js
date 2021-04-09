@@ -11,9 +11,10 @@ const TODO_UPDATED_DATA = 'todoUpdatedData'
 
 
 // action
-export const todoGetData = () => async dispatch => {
-    const respond = await route.get('todo/list/get_user_data/')
+export const todoGetData = (token) => async dispatch => {
+    const respond = await route.get('todo/list/get_user_data/',{headers: {'Authentication': `Token ${token}`}})
     .catch(() => console.log('Something went wrong'))
+    console.log(respond)
     dispatch({
         type: TODO_GET_DATA,
         payload: {todoList: respond.data}
@@ -99,7 +100,7 @@ export const todoUpdateData = (todo, task) => async dispatch => {
 
 
 // reducer\
-export default (todoList=[], action) => {
+const todo = (todoList=[], action) => {
     switch (action.type) {
         case TODO_GET_DATA:
             return action.payload.todoList
@@ -139,3 +140,5 @@ export default (todoList=[], action) => {
             return todoList;
     }
 }
+
+export default todo
