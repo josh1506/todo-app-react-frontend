@@ -9,6 +9,7 @@ function NavBar(props) {
     useEffect(() => {
         if (localStorage.getItem('auth_token')) props.authAdd(localStorage.getItem('auth_token'))
     }, [])
+
     const handleLogoutUser = () => {
         props.authRemoved()
     }
