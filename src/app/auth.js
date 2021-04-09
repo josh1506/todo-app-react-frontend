@@ -1,6 +1,3 @@
-import route from './route';
-
-
 // action type
 const AUTH_ADDED = 'authAdded'
 const AUTH_REMOVED = 'authRemoved'
@@ -28,7 +25,7 @@ export const authRemoved = () => {
 
 
 // reducer
-export default (auth='', action) => {
+const auth = (auth='', action) => {
     switch (action.type) {
         case AUTH_ADDED:
             return action.payload.token
@@ -41,4 +38,4 @@ export default (auth='', action) => {
     }
 } 
 
-
+export default auth
